@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/token-printer/static/js/main.d1991c3c.chunk.js",
-    "main.js.map": "/token-printer/static/js/main.d1991c3c.chunk.js.map",
+    "main.js": "/token-printer/static/js/main.630a939b.chunk.js",
+    "main.js.map": "/token-printer/static/js/main.630a939b.chunk.js.map",
     "runtime-main.js": "/token-printer/static/js/runtime-main.d5178142.js",
     "runtime-main.js.map": "/token-printer/static/js/runtime-main.d5178142.js.map",
     "static/js/2.22c9861b.chunk.js": "/token-printer/static/js/2.22c9861b.chunk.js",
     "static/js/2.22c9861b.chunk.js.map": "/token-printer/static/js/2.22c9861b.chunk.js.map",
     "index.html": "/token-printer/index.html",
-    "precache-manifest.98058eebe43bb9a66f2ed14fc5a12883.js": "/token-printer/precache-manifest.98058eebe43bb9a66f2ed14fc5a12883.js",
+    "precache-manifest.506072d772b8c37ed7e71a4b8ad7b537.js": "/token-printer/precache-manifest.506072d772b8c37ed7e71a4b8ad7b537.js",
     "service-worker.js": "/token-printer/service-worker.js",
     "static/js/2.22c9861b.chunk.js.LICENSE.txt": "/token-printer/static/js/2.22c9861b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d5178142.js",
     "static/js/2.22c9861b.chunk.js",
-    "static/js/main.d1991c3c.chunk.js"
+    "static/js/main.630a939b.chunk.js"
   ]
 }
