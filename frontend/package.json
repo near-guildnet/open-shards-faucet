@@ -2,16 +2,16 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "token-printer",
+  "homepage": "open-shards-faucet",
   "dependencies": {
     "@testing-library/jest-dom": "^5.10.0",
     "@testing-library/react": "^10.4.4",
     "@testing-library/user-event": "^11.4.2",
     "bn.js": "^5.1.2",
-    "near-api-js": "^0.25.1",
+    "near-api-js": "^0.29.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
