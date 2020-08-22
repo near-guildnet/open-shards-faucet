@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/token-printer/static/js/main.a9046538.chunk.js",
-    "main.js.map": "/token-printer/static/js/main.a9046538.chunk.js.map",
-    "runtime-main.js": "/token-printer/static/js/runtime-main.d5178142.js",
-    "runtime-main.js.map": "/token-printer/static/js/runtime-main.d5178142.js.map",
-    "static/js/2.6531c45b.chunk.js": "/token-printer/static/js/2.6531c45b.chunk.js",
-    "static/js/2.6531c45b.chunk.js.map": "/token-printer/static/js/2.6531c45b.chunk.js.map",
-    "index.html": "/token-printer/index.html",
-    "precache-manifest.40b1915b977839d5e51ac6263ab8b8d5.js": "/token-printer/precache-manifest.40b1915b977839d5e51ac6263ab8b8d5.js",
-    "service-worker.js": "/token-printer/service-worker.js",
-    "static/js/2.6531c45b.chunk.js.LICENSE.txt": "/token-printer/static/js/2.6531c45b.chunk.js.LICENSE.txt"
+    "main.js": "/open-shards-faucet/static/js/main.34833205.chunk.js",
+    "main.js.map": "/open-shards-faucet/static/js/main.34833205.chunk.js.map",
+    "runtime-main.js": "/open-shards-faucet/static/js/runtime-main.53ce1927.js",
+    "runtime-main.js.map": "/open-shards-faucet/static/js/runtime-main.53ce1927.js.map",
+    "static/js/2.1d70e490.chunk.js": "/open-shards-faucet/static/js/2.1d70e490.chunk.js",
+    "static/js/2.1d70e490.chunk.js.map": "/open-shards-faucet/static/js/2.1d70e490.chunk.js.map",
+    "index.html": "/open-shards-faucet/index.html",
+    "precache-manifest.8dc5c986f40a6f7da4f4b354cc285c7b.js": "/open-shards-faucet/precache-manifest.8dc5c986f40a6f7da4f4b354cc285c7b.js",
+    "service-worker.js": "/open-shards-faucet/service-worker.js",
+    "static/js/2.1d70e490.chunk.js.LICENSE.txt": "/open-shards-faucet/static/js/2.1d70e490.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d5178142.js",
-    "static/js/2.6531c45b.chunk.js",
-    "static/js/main.a9046538.chunk.js"
+    "static/js/runtime-main.53ce1927.js",
+    "static/js/2.1d70e490.chunk.js",
+    "static/js/main.34833205.chunk.js"
   ]
 }
