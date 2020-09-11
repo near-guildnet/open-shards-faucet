@@ -2,8 +2,8 @@ import React from 'react';
 import BN from 'bn.js';
 import * as nearAPI from 'near-api-js';
 
-const FaucetPrivateKey = 'ed25519:4a5T9u2ek3xNwP74EWZ8n94RBpWzj8ofgEzeNkLv2XqypomDyRpU2ENGrf9qBkuDCy9b8dat7TGiK4h649yYAd2j';
-const FaucetName = 'token-printer';
+const FaucetPrivateKey = 'ed25519:3D2DJcjtv3nFhHsiELeUhUaSFaCQXdJfZqaUcoaHxrGrcNfFs48fbAtbu7i3KdLDaDvMupXzrSjKiWdqqWgnacdc';
+const FaucetName = 'viboracecata.guildnet';
 const MinAccountIdLen = 2;
 const MaxAccountIdLen = 64;
 const ValidAccountRe = /^(([a-z\d]+[-_])*[a-z\d]+\.)*([a-z\d]+[-_])*[a-z\d]+$/;
@@ -56,10 +56,10 @@ class App extends React.Component {
 
   async initNear() {
     const nearConfig = {
-      networkId: 'default',
-      nodeUrl: 'https://rpc.nearprotocol.com',
+      networkId: 'guildnet',
+      nodeUrl: 'https://rpc.openshards.io',
       contractName: FaucetName,
-      walletUrl: 'https://wallet.nearprotocol.com',
+      walletUrl: 'https://wallet.openshards.io',
     };
     const keyStore = new nearAPI.keyStores.BrowserLocalStorageKeyStore();
     const near = await nearAPI.connect(Object.assign({ deps: { keyStore } }, nearConfig));
@@ -117,6 +117,8 @@ class App extends React.Component {
   }
 
   async computeProofOfWork(accountId, initialSalt) {
+    console.log("request accountId=" + accountId)
+    console.log("initialSalt=" + initialSalt)
     let msg = [...new TextEncoder('utf-8').encode(accountId + ':')];
     // salt
     let t = initialSalt;
@@ -139,11 +141,13 @@ class App extends React.Component {
           break;
         }
       }
+     // console.log("imm totalNumZeros=" + totalNumZeros)
       // checking difficulty
       if (totalNumZeros >= this._minDifficulty) {
         this.setState({
           computingProofOfWork: false,
         });
+        console.log("imm salt=" + salt)
         return salt;
       } else if (totalNumZeros > bestDifficulty) {
         bestDifficulty = totalNumZeros;
@@ -179,10 +183,12 @@ class App extends React.Component {
     })
     const accountId = this.state.accountId;
     const salt = await this.computeProofOfWork(accountId, new Date().getTime())
+    console.log("compute proof of work done, salt=" + salt)
     await this._faucetContract.request_transfer({
       account_id: accountId,
       salt,
     });
+    console.log("token transfer done")
     this.setState({
       requesting: false,
       numTransfers: await this._faucetContract.get_num_transfers(),
@@ -212,7 +218,7 @@ class App extends React.Component {
         </div>
         {this.state.accountId && !this.state.accountLoading && !this.state.accountExists && (
           <div className="alert alert-warning" role="alert">
-            Account {'@' + this.state.accountId} doesn't exist! You may want to try create it with <a href="https://near-examples.github.io/pow-faucet/">PoW Faucet</a>
+            Account {'@' + this.state.accountId} doesn't exist! You may want to try create it with <a href="https://wallet.openshards.io/create">Open-Shards-Wallet</a>
           </div>
         )}
         <div className="form-group">
@@ -223,7 +229,7 @@ class App extends React.Component {
           >
             {(this.state.requesting || this.state.accountLoading) && (
               <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-            )} Request {fromYocto(this._transferAmount)} Ⓝ
+            )} Request {fromYocto(this._transferAmount)}
           </button>
         </div>
         {this.state.requesting && (
@@ -255,7 +261,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <h1>Token Printer</h1>
+          <h1>Open Shards Faucet</h1>
           <div>
             <img src="https://media2.giphy.com/media/3o6Zt3AX5mSM29lGUw/source.gif" alt="Yo, Cash"/>
           </div>
