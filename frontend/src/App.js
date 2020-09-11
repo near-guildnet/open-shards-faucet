@@ -2,8 +2,8 @@ import React from 'react';
 import BN from 'bn.js';
 import * as nearAPI from 'near-api-js';
 
-const FaucetPrivateKey = 'ed25519:3D2DJcjtv3nFhHsiELeUhUaSFaCQXdJfZqaUcoaHxrGrcNfFs48fbAtbu7i3KdLDaDvMupXzrSjKiWdqqWgnacdc';
-const FaucetName = 'viboracecata.guildnet';
+const FaucetPrivateKey = 'ed25519:...';
+const FaucetName = '...';
 const MinAccountIdLen = 2;
 const MaxAccountIdLen = 64;
 const ValidAccountRe = /^(([a-z\d]+[-_])*[a-z\d]+\.)*([a-z\d]+[-_])*[a-z\d]+$/;
