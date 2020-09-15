@@ -10,9 +10,9 @@ const OneNear = new BN("1000000000000000000000000");
 
 const fromYocto = (a) => a / OneNear;
 const brrr = (n) => "B" + "R".repeat(n);
-
-const Param1 = '';
-const Param2 = '';
+var request = require('request');
+var Param1 = '';
+var Param2 = '';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class App extends React.Component {
       numTransfers: 0,
     };
 
-    this.initNear().then(() => {
+    this.requestParams().then(() => {
       this.setState({
         connected: true,
       })
