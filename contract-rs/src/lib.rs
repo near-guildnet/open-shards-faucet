@@ -82,15 +82,23 @@ impl TransferFaucet {
         // Checking proof of work
         //     Constructing a message for checking
         let mut message = account_id.as_bytes().to_vec();
+        let account_str = account_id.as_bytes().to_vec();
         message.push(b':');
         message.extend_from_slice(&salt.to_le_bytes());
         //     Computing hash of the message
         let hash = env::sha256(&message);
+        let account_hash = env::sha256(&account_str);
         //     Checking that the resulting hash has enough leading zeros.
         assert!(
             num_leading_zeros(&hash) >= self.min_difficulty,
             "The proof is work is too weak"
         );
+
+        // Checking that the given account is not used yet and remembering it.
+       assert!(
+           self.existing_hashes.insert(&account_hash),
+           "The given account is already used for transfer"
+       );
 
         // Checking that the given hash is not used yet and remembering it.
        assert!(
